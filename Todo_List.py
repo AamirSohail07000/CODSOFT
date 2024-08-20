@@ -14,14 +14,15 @@ my_font = Font(
   weight="bold", 
 )
 
+# Create Frame
 my_frame = Frame(root)
 my_frame.pack(pady=10)
 
 #create listbox
 my_list = Listbox(my_frame,
   font= my_font,
-  width = 25,
-  height=5,
+  width = 35,
+  height=8,
   bg="lightgray",
   bd= 0,
   fg="#464646",
@@ -33,7 +34,7 @@ my_list = Listbox(my_frame,
 my_list.pack(side=LEFT, fill=BOTH)
 
 #create dummy list
-Tasks = ["Go for a walk", "Do yoga", "buy meds", "bring milk"]
+Tasks = ["Go for a walk", "Do yoga", "Bring Groceries", "Solve Leetcode Questions"]
 #Add dummy list to list box
 for item in Tasks:
   my_list.insert(END, item)
@@ -63,13 +64,25 @@ def add_item():
   my_entry.delete(0, END)
 
 def cross_item():
-  pass
+  #Cross item
+  my_list.itemconfig(
+    my_list.curselection(),
+    fg="#dedede"
+  )
+  #Remove selection bar
+  my_list.select_clear(0,END)
 
 def uncross_item():
-  pass
+  #Cross item
+  my_list.itemconfig(
+    my_list.curselection(),
+    fg="#464646"
+  )
+  #Remove selection bar
+  my_list.select_clear(0,END)
 
 
-#Add buttons
+#Create buttons
 delete_button = Button(Button_frame, text="Delete Item", command=delete_item)
 add_button = Button(Button_frame, text="Add Item", command=add_item)
 cross_button = Button(Button_frame, text="Cross Item", command=cross_item)
