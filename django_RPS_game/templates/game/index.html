@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="{% static 'game/styles.css' %}">
+</head>
+<body>
+    <h1>Rock Paper Scissors</h1>
+    
+    <form method="post" class="move-form">
+        {% csrf_token %}
+        <button name="move" value="Rock" class="move-button">
+            <img src="{% static 'images/rock-emoji.png' %}" class="move-icon">Rock
+        </button>
+        <button name="move" value="Paper" class="move-button">
+            <img src="{% static 'images/paper-emoji.png' %}" class="move-icon">Paper
+        </button>
+        <button name="move" value="Scissors" class="move-button">
+            <img src="{% static 'images/scissors-emoji.png' %}" class="move-icon">Scissors
+        </button>
+    </form>
+
+    {% if player_move %}
+        <p>You chose: {{ player_move }}</p>
+        <p>Computer chose: {{ computer_move }}</p>
+        <p>Result: {{ result }}</p>
+    {% endif %}
+</body>
+</html>

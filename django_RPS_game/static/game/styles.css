@@ -1,0 +1,76 @@
+body {
+  background-color: rgb(68, 68, 68);
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center; /* Center-align content */
+  padding: 20px; /* Add some padding around the content */
+}
+
+.title,
+h1 {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 20px; /* Add margin for spacing */
+  color: white; /* Ensure color matches the dark background */
+}
+
+.move-form {
+  display: flex; /* Align buttons in a row */
+  justify-content: center; /* Center-align buttons horizontally */
+  gap: 20px; /* Space between buttons */
+  margin-top: 20px; /* Space above the form */
+}
+
+.move-button {
+  background-color: rgb(142, 153, 179);
+  border: 3px solid rgb(245, 190, 10);
+  width: 120px;
+  height: 120px;
+  border-radius: 60px;
+  display: flex; /* Align icon and text */
+  align-items: center; /* Center-align items vertically */
+  justify-content: center; /* Center-align items horizontally */
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s; /* Add transition for effects */
+}
+
+.move-button:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Slight hover effect */
+  transform: scale(1.05); /* Slightly increase size on hover */
+}
+
+.move-icon {
+  height: 40px; /* Increase icon size for better visibility */
+  width: 40px; /* Ensure icon is square */
+  margin-right: 8px; /* Space between icon and text */
+}
+
+.result {
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 50px;
+}
+
+.score {
+  margin-top: 60px;
+  font-size: 20px; /* Increase font size for visibility */
+}
+
+.reset-score-button,
+.auto-play-button {
+  background-color: white;
+  color: black;
+  border: none;
+  font-size: 15px;
+  padding: 8px 15px;
+  cursor: pointer;
+  margin-top: 20px; /* Add space above buttons */
+  margin-right: 10px; /* Add space between buttons */
+  transition: background-color 0.3s, color 0.3s; /* Add transition for effects */
+}
+
+.reset-score-button:hover,
+.auto-play-button:hover {
+  background-color: #ddd; /* Change background on hover */
+  color: #000; /* Change text color on hover */
+}
